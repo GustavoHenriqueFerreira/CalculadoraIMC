@@ -12,7 +12,7 @@
 
 //Função principal
 function calcularImc(event) {
-    event.preventDefault();
+    /* event.preventDefault(); */
 
     console.log("Funcionante!!!");
 
@@ -108,9 +108,7 @@ function cadastrarUsuario(usuario) {
 
     listaUsuarios.push(usuario);
 
-    localStorage.setItem("usuariosCadastrados", JSON.stringify(listaUsuarios));
-    
-    return montarTabela(listaUsuarios);
+    return localStorage.setItem("usuariosCadastrados", JSON.stringify(listaUsuarios));
 }
 
 /* Passo 6 - Ler lista */
@@ -158,7 +156,9 @@ function montarTabela(listaDeCadastrados) {
 
 /* Passo 8 - Deletar tabela */
 function deletarTabela() {
-    localStorage.clear();
+    localStorage.removeItem("usuariosCadastrados");
+    
+    window.location.reload();
 
     let tabela = document.getElementById("corpo-tabela");
 
