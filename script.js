@@ -157,12 +157,6 @@ function montarTabela(listaDeCadastrados) {
 /* Passo 8 - Deletar tabela */
 function deletarTabela() {
     localStorage.removeItem("usuariosCadastrados");
-    
+
     window.location.reload();
-
-    let tabela = document.getElementById("corpo-tabela");
-
-    tabela.innerHTML = `<tr class="linha-mensagem">
-            <td colspan="6">Nenhum usuário cadastrado</td>
-        </tr>`;
 }
